@@ -1,0 +1,66 @@
+import java.util.Scanner;
+
+
+public class automata110 {
+
+	public automata110() {
+		int cont = 0;
+		System.out.println("Bienvenido, ingrese la cadena");
+		Scanner cadenas = new Scanner(System.in);
+		Scanner[] cade = null;
+		cade[100]= cadenas;
+		
+		
+		for(int i= i=0; i < cadenas.length(); i++) {
+			if((cade[i]>='48'&&cade[i]<='57')&&(cade[i]>='97'&&cade[i]<='122')) {
+			
+				for(int i= i=0; i < cadenas.length(); i++) {
+					int x=cadenas.length-3;
+						if(cade[x]=='49'){
+							cont=cont+1;
+							System.out.println("Continuemos");
+							
+							int y=x+1;
+							   if(cade[y]=='49') {
+								cont=cont+1;
+								System.out.println("Continuemos");
+							
+							 int z=y+1;	
+						           if(cade[z]=='48') {
+									cont=cont+1;
+									System.out.println("Continuemos");
+									System.out.println("Esta correcto, la cadena cumple");
+								
+							
+							     } else {
+							     System.out.println("Fatal error");	
+								
+						     	}
+							
+							}else {
+								System.out.println("Fatal error");
+							}
+							
+							
+						} else {
+							System.out.println("Fatal error");
+						}
+						
+							
+				       }
+				
+			}else {
+				System.out.println("Fatal error");
+			}
+			
+		}
+		
+		
+		
+	
+		
+	}
+		
+		
+}
+
