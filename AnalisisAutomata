@@ -1,0 +1,18 @@
+package Automata;
+
+public class AnalisisAutomata {
+
+	public static int[] leerCadena(String cadena) {
+		int arreglo[] = new int[cadena.length()];
+		for(int i = 0; i<cadena.length();i++) {
+			arreglo[i] = Integer.parseInt(cadena.substring(i, i));
+		}
+		return arreglo;
+	}
+	
+	public static void analizador(int[] numero) {
+		String errores;
+		
+	}
+
+}
