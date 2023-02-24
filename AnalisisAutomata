@@ -1,6 +1,7 @@
 package Automata;
 
 public class AnalisisAutomata {
+	static String errores;
 
 	public static int[] leerCadena(String cadena) {
 		int arreglo[] = new int[cadena.length()];
@@ -11,8 +12,55 @@ public class AnalisisAutomata {
 	}
 	
 	public static void analizador(int[] numero) {
-		String errores;
-		
-	}
 
+		int i = 0;
+		q0(numero[i]);
+			i++;
+			errores = "Es reconocido";
+			if(q1(numero[i]) == true) {
+				i++;
+				errores = "Es reconocido";
+				if(q2(numero[i]) == true) {
+					errores = "Es reconocido" + "La cadena contiene 110";
+				}
+			}
+		}"No es reconocido retrocede a q0";
+	
+	public static void q0(int numero) {
+		if(numero == 1) {
+			q1(numero);
+			errores = "Es reconocido, avanza a q1";
+		}else {
+			q0(numero);
+			errores = "No es reconocido retrocede a q0";
+		}
+	}
+	
+	public static void q1(int numero) {
+		if(numero == 1) {
+			q2(numero);
+			errores = "Es reconocido";
+		}else {
+			q0(numero);
+			errores = "No es reconocido retrocede a q0";
+		}
+	}
+	
+	public static void q2(int numero) {
+		if(numero == 1) {
+			q2(numero);
+			errores = "No es reconocido";
+		}else {
+			q3(numero);
+			errores = "No es reconocido retrocede a q0";
+		}
+	}
+	
+	public static void q3(int numero) {
+		if(numero == 1) {
+			q1(numero);
+		}else {
+			q0(numero);
+		}
+	}
 }
